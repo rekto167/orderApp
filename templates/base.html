@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    <title>
+        {% block page_title %}
+          
+        {% endblock page_title %}
+    </title>
+  </head>
+  <body>
+    {% block contents %}
+      
+    {% endblock contents %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'bootstrap/bootstrap.js' %}"></script>
+  </body>
+</html>
