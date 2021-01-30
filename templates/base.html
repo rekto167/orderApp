@@ -8,6 +8,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    {% block tambahan_css %}
+      
+    {% endblock tambahan_css %}
     <title>
         {% block page_title %}
           
@@ -22,5 +25,8 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'bootstrap/bootstrap.js' %}"></script>
+    {% block tambahan_js %}
+      
+    {% endblock tambahan_js %}
   </body>
 </html>
