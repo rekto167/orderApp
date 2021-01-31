@@ -1,9 +1,13 @@
 from django.urls import path
 
 from .views import (
-    LoginView
+    LoginView,
+    IndexChefView,
+    IndexCustomerView
 )
 app_name = 'restoran'
 urlpatterns = [
+    path('customer/', IndexCustomerView.as_view(), name='index-customer'),
+    path('chef/', IndexChefView.as_view(), name='index-chef'),
     path('login/', LoginView.as_view(), name='login'),
 ]
