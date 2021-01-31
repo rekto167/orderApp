@@ -7,7 +7,7 @@ from .views import (
 )
 app_name = 'restoran'
 urlpatterns = [
-    path('customer/', IndexCustomerView.as_view(), name='index-customer'),
-    path('chef/', IndexChefView.as_view(), name='index-chef'),
+    path('customer/', IndexCustomerView.as_view(), name='customer'),
+    path('chef/', IndexChefView.as_view(), name='chef'),
     path('login/', LoginView.as_view(), name='login'),
 ]
