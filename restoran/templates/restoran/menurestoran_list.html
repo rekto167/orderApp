@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  {{page_title}}
+{% endblock page_title %}
+
+{% block contents %}
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'restoran:chef' %}">Order App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'restoran:chef' %}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'restoran:chef' %}">Ordering</a>
+              </li>
+            </ul>
+          </div>
+          <h6 class="nav navbar-nav navbar-right">Hallo, <b>{{user}}</b></h6>
+          <ul class="nav navbar-nav navbar-right">
+              <li class="nav-item">
+              <a class="btn btn-outline-info" href="{% url 'restoran:login' %}">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+          <ul>
+            {% for menu in object_list %}
+              <div class="card float-left ml-3" style="width: 15rem; height: 22rem">
+                <img class="card-img-top mx-auto mt-2 " src="{{menu.image_menu.url}}" alt="{{menu.image_menu}}" style="width: 10rem; height:10rem">
+                <div class="card-body">
+                  <h3 class="card-text text-center">{{menu.name_menu}}</h3>
+                  <div class="container mt-5">
+                    <img src="/static/img/pricetag.svg" style="width:20px; height:20px">
+                    <span class="text-danger text-center font-weight-bold">{{menu.price_menu}}</span>
+                  </div>
+                  <a class="btn btn-warning" href=""><span class="oi" data-glyph="icon-name" title="icon name" aria-hidden="true"><img src="/static/img/edit.svg" alt=""></a>
+                  <a class="badge badge-danger mt-3" href=""><span class="oi" data-glyph="icon-name" title="icon name" aria-hidden="true"><img src="/static/img/delete.svg" alt=""></a>
+                </div>
+              </div>
+            {% endfor %}
+          </ul>
+      </div>
+{% endblock contents %}

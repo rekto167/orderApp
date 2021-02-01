@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import user_passes_test
+from .models import MenuRestoran
+from .forms import MenuRestoranForm
 # Create your views here.
 
 
@@ -32,13 +34,13 @@ class LoginView(TemplateView):
         return context
 
 
-class IndexChefView(TemplateView):
-    template_name = "restoran/index_chef.html"
+class IndexChefView(ListView):
+    model = MenuRestoran
+    paginate_by = 4
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["page_title"] = "HALAMAN CHEF"
-        return context
+    def get_context_data(self, *args, **kwargs):
+        kwargs = self.kwargs
+        return super().get_context_data(*args, **kwargs)
 
 
 class IndexCustomerView(TemplateView):

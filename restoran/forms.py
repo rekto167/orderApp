@@ -12,6 +12,3 @@ class MenuRestoranForm(forms.ModelForm):
             'image_menu',
             'price_menu',
         )
-        widgets = {
-            'category_menu': forms.Select(choices=kategori)
-        }
