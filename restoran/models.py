@@ -15,7 +15,7 @@ class MenuRestoran(models.Model):
     slug = models.SlugField(blank=True, editable=False)
 
     def save(self):
-        self.slug = slugify(self.name_menu)
+        self.slug = slugify(f"{self.name_menu}")
         super().save()
 
     def __str__(self):

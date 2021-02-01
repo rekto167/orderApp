@@ -9,4 +9,4 @@ class MenuAdmin(admin.ModelAdmin):
     ]
 
 
-admin.site.register(MenuRestoran, MenuAdmin)
+admin.site.register(MenuRestoran)
