@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import user_passes_test
@@ -32,6 +32,10 @@ class LoginView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["page_title"] = "LOGIN"
         return context
+
+
+class AddMenuView(CreateView):
+    pass
 
 
 class IndexChefView(ListView):
