@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 # Create your models here.
 
 
@@ -13,6 +14,9 @@ class MenuRestoran(models.Model):
     def save(self):
         self.slug = slugify(f"{self.name_menu}")
         super().save()
+
+    def get_absolute_url(self):
+        return reverse('restoran:chef')
 
     def __str__(self):
         return "{}. {}".format(self.id, self.name_menu)

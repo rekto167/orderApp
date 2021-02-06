@@ -30,7 +30,7 @@
           </ul>
         </div>
       </nav>
-      <a class="btn btn-primary mt-3" href="" style="margin-left: 42px;">Add Menu</a>
+      <a class="btn btn-primary mt-3" href="{% url 'restoran:addmenu' %}" style="margin-left: 42px;">Add Menu</a>
       <div class="container">
           <ul class="mt-3">
             {% for menu in object_list %}
