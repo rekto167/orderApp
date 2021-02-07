@@ -48,11 +48,12 @@ class AddMenuView(CreateView):
 
 class IndexChefView(ListView):
     model = MenuRestoran
-    paginate_by = 4
+    print()
+    # paginate_by = 4
 
-    def get_context_data(self, *args, **kwargs):
-        kwargs = self.kwargs
-        return super().get_context_data(*args, **kwargs)
+    # def get_context_data(self, *args, **kwargs):
+    #     kwargs = self.kwargs
+    #     return super().get_context_data(*args, **kwargs)
 
 
 class IndexCustomerView(TemplateView):
